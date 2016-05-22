@@ -638,11 +638,15 @@ KBUILD_CFLAGS	+= $(call cc-disable-warning,frame-address,)
 ifdef CONFIG_CC_OPTIMIZE_FOR_SIZE
 KBUILD_CFLAGS	+= -Os
 else
+<<<<<<< HEAD
 ifdef CONFIG_PROFILE_ALL_BRANCHES
 KBUILD_CFLAGS	+= -O2
 else
 KBUILD_CFLAGS   += -O2
 endif
+=======
+KBUILD_CFLAGS	+= -O2 $(call cc-disable-warning,maybe-uninitialized,)
+>>>>>>> 69d2a7c163a3... update Makefile
 endif
 
 # Disable unused-constant-variable warnings
